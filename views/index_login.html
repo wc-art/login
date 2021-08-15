@@ -24,6 +24,10 @@
                 {{each students}}
                 <li class="list-group-item">id:{{ $value.id }} 用户名:{{ $value.username }}<span class="pull-right">{{
                         $value.dateTime }}</span></li>
+                <div class="abc">
+                    <a href="/edit?id={{ $value.id }}">编辑</a>
+                    <a href="/delete?id={{ $value.id }}" onclick="return isDelete();">删除</a>
+                </div>
                 {{/each}}
             </ul>
             <script>

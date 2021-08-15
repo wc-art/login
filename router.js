@@ -74,7 +74,18 @@ router.get('/', function (req, res) {
       throw err
     }
     res.render('index.html', {
-      students: students
+      students
+    })
+  })
+})
+
+router.get('/index_login', function (req, res) {
+  Student.find((err, students) => {
+    if (err) {
+      throw err
+    }
+    res.render('index_login.html', {
+      students
     })
   })
 })
@@ -88,7 +99,7 @@ router.post('/save', function (req, res) {
     if (err) {
       throw err
     }
-    res.redirect('/')
+    res.redirect('/index_login')
   })
 })
 
@@ -98,7 +109,7 @@ router.get('/edit', (req, res) => {
       throw err
     }
     res.render('update.html', {
-      student: student
+      student
     })
   })
 })
@@ -108,7 +119,7 @@ router.post('/edit', (req, res) => {
     if (err) {
       throw err
     }
-    res.redirect('/')
+    res.redirect('/index_login')
   })
 })
 // 使用 get 请求的页面
@@ -135,7 +146,7 @@ router.get('/delete', (req, res) => {
   // 在 Express 中可以直接 req.query 来获取查询字符串参数
   // console.log(req.query)
   Student.delete(req.query.id, (err) => {
-    res.redirect('/')
+    res.redirect('/index_login')
   })
 })
 
@@ -145,14 +156,12 @@ router.post('/login', (req, res) => {
       throw err
     }
     if(flag === 0){
+      res.redirect('/lg')
       res.render('login.html', {
         message: '用户名不存在或密码错误'
       })
     } else {
-      res.render('index.html', {
-        message: '登录成功',
-        students
-      })
+      res.redirect('/index_login')
     }
   })
 })

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>留言发表页面</title>
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/login.css">
 </head>
+
 <body>
     <!-- 
         表单中需要提交的表单控件元素必须具有 name 属性
@@ -18,23 +22,28 @@
                 get
                 post
      -->
-    <h1>首页 <small>注册</small></h1>
-    <form action="/save" method="post">
-        用户名
-        <br><br>
-        <input type="text" name="username" required minlength="2" maxlength="10" placeholder="请写入你的用户名">
-        <br><br>
-        密码
-        <br><br>
-        <input type="password" name="password" required minlength="5" maxlength="20" placeholder="请输入密码">
-        <br><br>
-        <input type="submit" value="注册"  onclick="return IsPost();">
-    </form>
+    <div class="nav">
+        <h1>首页 <small>注册</small></h1>
+        <form action="/save" method="post">
+            用户名
+            <br><br>
+            <input class="srk" type="text" name="username" required minlength="2" maxlength="10" placeholder="请写入你的用户名">
+            <br><br>
+            密码
+            <br><br>
+            <input class="srk" type="password" name="password" required minlength="5" maxlength="20"
+                placeholder="请输入密码">
+            <br><br>
+            <input type="submit" value="注册" onclick="return IsPost();">
+            <br><br>
+        </form>
+    </div>
     <script>
-        function IsPost () {
+        function IsPost() {
             if (confirm('是否提交？')) return true
             return false
         }
     </script>
 </body>
+
 </html>

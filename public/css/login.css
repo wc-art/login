@@ -1,0 +1,21 @@
+body{
+  display: flex;
+  justify-content: center;
+}
+.nav{
+  margin-top: 50px;
+  width: 300px;
+  text-align: center;
+  border:rgb(0, 195, 255) 1px solid;
+  background-image: url("../img/d2b033fc53.jpg");
+  background-size: cover;
+}
+
+
+input{ 
+  width: 100px;
+}
+
+.srk{
+  width: 293px;
+}

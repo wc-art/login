@@ -11,6 +11,13 @@ body {
 a {
   text-decoration: none;
 }
+.show {
+  margin: auto;
+  border: black 1px solid;
+}
+.page-header {
+  text-align: center;
+}
 .page-header .h1 {
   margin: 10px 0;
 }
@@ -27,11 +34,17 @@ a {
   width: 1000px;
   height: 40px;
   padding: 5px;
+  line-height: 40px;
+  background-image: url("../img/d2b033fc53.jpg");
+  margin: 10px auto;
 }
 .list-group .list-group-item span {
   float: right;
   text-align: center;
   height: 40px;
   line-height: 40px;
+}
+.list-group .abc {
+  text-align: center;
 }
 /*# sourceMappingURL=./index.css.map */
